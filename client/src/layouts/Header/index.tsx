@@ -5,9 +5,9 @@ import { useAppDispatch, useAppSelector } from '@/store/hook'
 import { useEffect } from 'react'
 import { getProfile } from '@/store/userThunks'
 import Logout from '@/containers/Logout'
-import Button from '../components/Button'
+import Button from '@/components/Button'
 import { useRouter } from 'next/router'
-import NotificationList from './NotificationList'
+import NotificationList from '@/layouts/NotificationList'
 import SocketClient from '@/apis/socket'
 import { selectors as userSelector } from '@/store/userSlice'
 
@@ -18,7 +18,7 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(getProfile())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     const socketClient = SocketClient.getInstance()

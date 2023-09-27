@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { getUserProfile, userLoginOrRegister } from '@/apis/userService'
 import { LoginRegisterFormData } from '@/types/video'
-import LocalStorageService from '@/shared/services/localStorage'
+import LocalStorageService from '@/shared/utils/localStorage'
 import { userLogout } from './userSlice'
 import SocketClient from '@/apis/socket'
 const localStorage = new LocalStorageService()

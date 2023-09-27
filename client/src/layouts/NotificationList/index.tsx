@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/store/hook'
 import { NotifyData, selectors as notifySelector } from '@/store/notifySlice'
-import Notification from '../components/Notification'
+import Notification from './Notification'
 
 const NotificationList = () => {
   const { notifies } = useAppSelector(notifySelector.notifyStateSelector)

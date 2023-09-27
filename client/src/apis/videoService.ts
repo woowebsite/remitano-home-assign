@@ -1,6 +1,6 @@
 import HttpService from '@/apis/httpService'
 import { VideoData } from '@/types/video'
-import LocalStorageService from '@/shared/services/localStorage'
+import LocalStorageService from '@/shared/utils/localStorage'
 import SocketClient from '@/apis/socket'
 const localStorageService = new LocalStorageService()
 

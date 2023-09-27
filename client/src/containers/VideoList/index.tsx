@@ -2,7 +2,7 @@ import { fetchAllVideoData } from '@/store/videoThunks'
 import { VideoData } from '@/types/video'
 import { useAppDispatch, useAppSelector } from '@/store/hook'
 import React, { useEffect } from 'react'
-import VideoCard from '@/components/VideoCard'
+import VideoCard from './VideoCard'
 import { selectors } from '@/store/videoSlice'
 
 const VideoList = () => {
@@ -11,7 +11,7 @@ const VideoList = () => {
 
   useEffect(() => {
     dispatch(fetchAllVideoData())
-  }, [])
+  }, [dispatch])
 
   if (loading) {
     return <div>Loading...</div>

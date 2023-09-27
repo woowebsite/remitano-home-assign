@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '@/store/hook'
-import LoginAndRegisterForm from '@/components/LoginAndRegisterForm'
+import LoginAndRegisterForm from '@/containers/LoginAndRegister/LoginAndRegisterForm'
 import { loginOrRegister } from '@/store/userThunks'
 import { selectors } from '@/store/userSlice'
 

@@ -1,6 +1,6 @@
 import { shareVideoData } from '@/store/videoThunks'
-import Button from '@/shared/components/Button'
-import Input from '@/shared/components/Input'
+import Button from '@/components/Button'
+import Input from '@/components/Input'
 import { useAppDispatch, useAppSelector } from '@/store/hook'
 import { useRouter } from 'next/router'
 import React, { FormEvent, useEffect, useState } from 'react'

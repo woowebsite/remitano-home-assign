@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 import { UserData } from '@/types/user'
 import { getProfile, loginOrRegister } from './userThunks'
 import { RootState } from '@/store'
-import { SagaType } from 'redux-toolkit-saga'
 
 interface VideoState {
   user: UserData | null
