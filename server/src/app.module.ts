@@ -5,7 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './modules/users/users.module';
+import { VideosModule } from './modules/videos/videos.module';
 import { TypeOrmConfigService } from './config/database.config';
+import { SocketModule } from './modules/socket/socket.module';
 import configuration from './config/app.config';
 
 @Module({
@@ -20,6 +22,8 @@ import configuration from './config/app.config';
       inject: [ConfigService],
     }),
     UsersModule,
+    VideosModule,
+    SocketModule,
   ],
   controllers: [AppController],
   providers: [AppService],
