@@ -22,7 +22,7 @@ const VideoList = () => {
   }
 
   return (
-    <div className='max-w-4xl w-full  m-auto'>
+    <div test-id="video-list" className='max-w-4xl w-full  m-auto'>
       {videos.map((video: VideoData) => (
         <VideoCard key={video.id} {...video} />
       ))}

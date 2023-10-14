@@ -1,6 +1,5 @@
 import LocalStorageService from '@/shared/utils/localStorage'
 import store from '@/store'
-import { useAppSelector } from '@/store/hook'
 import { addNotifyToList } from '@/store/notifySlice'
 import { io, Socket } from 'socket.io-client'
 
