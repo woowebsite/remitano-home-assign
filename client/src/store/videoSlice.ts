@@ -12,7 +12,7 @@ interface VideoState {
 
 const sliceName = 'video'
 
-const initialState: VideoState = {
+export const initialState: VideoState = {
   videos: [],
   loading: false,
   error: null,
@@ -29,27 +29,27 @@ const videoSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllVideoData.pending, (state) => {
+      .addCase(fetchAllVideoData?.pending, (state) => {
         state.loading = true
         state.error = null
       })
-      .addCase(fetchAllVideoData.fulfilled, (state, action) => {
+      .addCase(fetchAllVideoData?.fulfilled, (state, action) => {
         state.loading = false
         state.videos = action.payload
       })
-      .addCase(fetchAllVideoData.rejected, (state, action) => {
+      .addCase(fetchAllVideoData?.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload
       })
-      .addCase(shareVideoData.pending, (state) => {
+      .addCase(shareVideoData?.pending, (state) => {
         state.loading = true
         state.sharedLinkStatus = 'start'
       })
-      .addCase(shareVideoData.fulfilled, (state, action) => {
+      .addCase(shareVideoData?.fulfilled, (state, action) => {
         state.loading = false
         state.sharedLinkStatus = 'success'
       })
-      .addCase(shareVideoData.rejected, (state, action) => {
+      .addCase(shareVideoData?.rejected, (state, action) => {
         state.loading = false
         state.sharedLinkStatus = 'fail'
       })
@@ -69,5 +69,5 @@ export const selectors = {
   sharedLinkStatusSelector,
   videoStateSelector,
 }
-
+export { videoSlice }
 export default videoSlice.reducer

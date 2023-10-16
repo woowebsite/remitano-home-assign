@@ -15,7 +15,7 @@ interface NotifyState {
   error: any
 }
 
-const initialState: NotifyState = {
+export const initialState: NotifyState = {
   notifies: [],
   loading: false,
   error: null,

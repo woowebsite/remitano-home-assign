@@ -3,14 +3,14 @@ import { UserData } from '@/types/user'
 import { getProfile, loginOrRegister } from './userThunks'
 import { RootState } from '@/store'
 
-interface VideoState {
+interface UserState {
   user: UserData | null
   loading: boolean
   error: any
 }
 const sliceName = 'user'
 
-const initialState: VideoState = {
+export const initialState: UserState = {
   user: null,
   loading: false,
   error: null,
@@ -54,4 +54,7 @@ export const selectors = {
   userStateSelector,
 }
 
-export default userSlice.reducer
+// Extract the action creators object and the reducer
+const { actions, reducer } = userSlice
+export { userSlice }
+export default reducer
