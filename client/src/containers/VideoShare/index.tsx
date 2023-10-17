@@ -29,10 +29,6 @@ const VideoShare = () => {
     if (sharedLinkStatus === 'success') {
       router.push('/')
     }
-
-    return () => {
-      dispatch(resetSharedLinkStatus())
-    }
   }, [dispatch, router, sharedLinkStatus, user])
 
   return (
@@ -47,13 +43,20 @@ const VideoShare = () => {
             </label>
           </div>
           <div className='md:w-2/3'>
-            <Input placeholder='Please enter a valid YouTube link' pattern={'^(https?://)?(www.)?(youtube.com|youtu.?be)/.+$'} required={true} onChange={handleNameChange} className='w-full' />
+            <Input
+              testId='share-link'
+              placeholder='Please enter a valid YouTube link'
+              pattern={'^(https?://)?(www.)?(youtube.com|youtu.?be)/.+$'}
+              required={true}
+              onChange={handleNameChange}
+              className='w-full'
+            />
           </div>
         </div>
         <div className='md:flex md:items-center mb-6'>
           <div className='md:w-1/3'></div>
           <div className='md:w-2/3'>
-            <Button disabled={loading || !user} type='submit' className='w-full'>
+            <Button disabled={loading || !user} type='submit' className='w-full' testId='button-share'>
               {loading ? 'Sharing...' : 'Share'}
             </Button>
           </div>
