@@ -9,6 +9,8 @@ This project is a Youtube Video Sharing application that allows users to registe
 3. [Installation](#-installation)
 4. [Running the Project](#-running-the-project)
 5. [Docker Deployment](#-docker-deployment)
+6. [Usage](#-usage)
+7. [Troubleshooting](#-troubleshooting)
 
 ## 📜 Rules
 
@@ -46,3 +48,22 @@ To deploy the application at local using Docker, follow these steps:
 
 1. Make sure you have Docker and Docker Compose installed on your system.
 2. Start app with `docker-compose.yml` file, run `docker-compose up`
+
+## Usage
+
+Once the application is running, follow these steps to use its features:
+
+1. Login/Register: Click on the "Login/Register" button to login or register new a account.
+2. Share a Youtube video: Click on the "Share Video" button, paste the Youtube video URL, and submit the form.
+3. View shared videos: Click on Home Button or Funny Movies text to go to the shared videos list.
+4. Real-time notifications: When a new video is shared by another user, you will receive a real-time notification containing the video title and the user's email.
+
+## Troubleshooting
+
+If you encounter any issues during setup or usage, consider the following troubleshooting steps:
+
+- Double-check that all the prerequisites are installed correctly.
+- Verify the configuration settings for both the server and client.
+- Make sure the database connection details are accurate.
+
+If you're still experiencing difficulties, please open a new issue in the project's repository for further assistance.

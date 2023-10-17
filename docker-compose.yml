@@ -1,0 +1,31 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3001
+      - MONGODB_CONNECTION_STRING=mongodb://mongodb:27017/video_sharing_app
+      - TYPEORM_AUTO_SYNC_SCHEMA_DATABASE=false
+      - YOUTUBE_API_URL=https://youtube.googleapis.com/youtube/v3
+      - YOUTUBE_API_KEY=AIzaSyCHE_jfY76uKFv4uejlgFj3LdmgJlJs_W8
+      - JWT_ACCESS_TOKEN_SECRET=your-secret-key
+      - JWT_TOKEN_EXPIRES_IN=1h
+    depends_on:
+      - mongodb
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db

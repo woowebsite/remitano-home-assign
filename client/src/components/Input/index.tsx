@@ -8,7 +8,7 @@ interface InputProps {
   onChange: (value: string) => void
   required?: boolean
   pattern?: string
-  testId: string
+  testId?: string
 }
 
 const Input: React.FC<InputProps> = ({ onChange, value, placeholder, className, required, pattern, type = 'text', testId = 'input' }) => {
