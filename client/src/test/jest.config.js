@@ -8,22 +8,19 @@ const createJestConfig = nextJest({ dir: './' })
 // Any custom config you want to pass to Jest
 const customJestConfig = {
   rootDir: '../',
-  preset: 'ts-jest',
   transform: {
-    '^.+\\.tsx?$': [
-      'ts-jest',
-      {
-        tsconfig: 'tsconfig.spec.json',
-      },
-    ],
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    // Use babel-jest to transpile tests with the next/babel preset
+    // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   testEnvironment: 'jest-environment-jsdom',
+  coverageProvider: 'v8',
   setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   collectCoverage: false,
   testPathIgnorePatterns: ['<rootDir>/public/', '<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/test/'],
   moduleDirectories: ['node_modules', 'src'],
+  collectCoverageFrom: ['**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**', '!<rootDir>/out/**', '!<rootDir>/.next/**', '!<rootDir>/*.config.js', '!<rootDir>/coverage/**'],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(paths, { prefix: '<rootDir>/' }),
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
